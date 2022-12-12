@@ -23,6 +23,7 @@ if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 # aliases
+alias ls="ls --color"
 alias ll="ls -al"
 alias ddir="ls -al"
 alias vim="nvim"
