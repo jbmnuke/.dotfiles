@@ -22,6 +22,15 @@ if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile
 # Quiet p10k instant prompt warnings
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
+# Start ssh-agent if not started
+if [ -z "$(pgrep ssh-agent)" ]; then
+    rm -rf /tmp/ssh-*
+    eval $(ssh-agent -s) > /dev/null
+else
+    export SSH_AGENT_PID=$(pgrep ssh-agent)
+    export SSH_AUTH_SOCK=$(find /tmp/ssh-* -name agent.*)
+fi
+
 # aliases
 alias ls="ls --color"
 alias ll="ls -al"
