@@ -16,11 +16,16 @@ nix-env -iA \
         nixpkgs.ripgrep \
         nixpkgs.bat \
         nixpkgs.tree \
-        nixpkgs.direnv
+        nixpkgs.glow \
+        nixpkgs.direnv \
+        nixpkgs.kitty \
+        nixpkgs.neofetch \
+        nixpkgs.glances \
+        nixpkgs.obsidian
 
 # stow config files
 stow git
-stow zsh
+stow zsh:
 stow nvim
 
 # add zsh to valid login shells
